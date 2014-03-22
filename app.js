@@ -1,8 +1,4 @@
-
-/**
- * Module dependencies.
- */
-
+require('newrelic');
 var express = require('express'),       // the main ssjs framework
     db = require('./config/db'),        // database connection
     routes = require('./routes'),       // by default, brings in routes/index.js

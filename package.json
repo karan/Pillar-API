@@ -10,6 +10,7 @@
     "jade": "*",
     "mongodb": "*",
     "mongoose": "~3.8.8",
-    "connect-redis" : "1.4.7"
+    "connect-redis": "1.4.7",
+    "newrelic": "~1.4.0"
   }
 }
