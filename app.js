@@ -77,6 +77,9 @@ app.get('/getquote', user.getQuote);
 // post a message to the current message, can be a quote or a custom message
 app.post('/sendmessage', middleware.requiresLogin, user.sendmessage)
 
+// get details of a given message id
+app.get('/getmessage', middleware.requiresLogin, user.getMessage);
+
 // Start the server
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

@@ -201,9 +201,15 @@ exports.sendmessage = function(req, res) {
     });
 }
 
-
-
-
-
-
-
+/*
+ * get details of a given message id
+ */
+exports.getMessage = function(req, res) {
+    var messageID = req.query.messageID;
+    Message.findOne({'_id': messageID}, function(err, message) {
+        res.json({
+            'response': 'OK',
+            'message': message
+        });
+    });
+}
