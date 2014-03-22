@@ -15,7 +15,7 @@ var app = express();
 // all environments
 app.configure(function(){
     // read port from .env file
-    app.set('port', 3000);
+    app.set('port', process.env.PORT || 3000);
     // locate the views folder
     app.set('views', __dirname + '/views');
     // we are using jade templating engine
