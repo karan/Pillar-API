@@ -3,9 +3,9 @@
 var mongoose = require('mongoose');
 
 // local
-//var dbURI = 'mongodb://localhost/spa';
+var dbURI = 'mongodb://localhost/spa';
 // on the web
-var dbURI = 'mongodb://heroku_app23265137:qvvaldo5leaukcu66gth1916v2@ds027409.mongolab.com:27409/heroku_app23265137'
+//var dbURI = 'mongodb://heroku_app23265137:qvvaldo5leaukcu66gth1916v2@ds027409.mongolab.com:27409/heroku_app23265137'
 mongoose.connect(dbURI);
 
 // when connected with db

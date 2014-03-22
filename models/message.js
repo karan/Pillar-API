@@ -19,7 +19,12 @@ var messageSchema = new Schema({
     username: {
         type: String,
         required: true
-    }
+    },
+    replies: [{
+        message: String,
+        title: String,
+        timestamp: { type: Date, default: Date.now }
+    }]
 });
 
 messageSchema.path('message').validate(function(value) {

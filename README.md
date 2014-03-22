@@ -170,3 +170,48 @@ Response:
             }
         ]
     }
+
+#### Get a random quote from the bible
+
+`GET /getquote`
+
+Response:
+
+    {
+        "response": "OK",
+        "quote": {
+            "title": "1 John 5:4",
+            "preview": "because everyone who is fathered by God conquers the world. \r\nAnd this is the victory which has conquered the world: our faith."
+        }
+    }
+
+##### 
+
+`POST sendmessage`
+
+Form needs:
+
+    messageID - objectID of the message to which this is a reply
+    message - body of the message
+    messageTitle - title of the message (1 John 5: or empty)
+
+Response:
+
+    {
+        "response": "OK",
+        "message": {
+            "__v": 0,
+            "_id": "532d7f710ae6fd58f7dc1299",
+            "message": "\"hello world\"",
+            "username": "tu",
+            "replies": [
+                {
+                    "message": "this is a testing message reply",
+                    "title": "",
+                    "_id": "532dccd88636f300005e9e80",
+                    "timestamp": "2014-03-22T17:48:08.650Z"
+                }
+            ],
+            "created_at": "2014-03-22T12:17:53.550Z"
+        }
+    }

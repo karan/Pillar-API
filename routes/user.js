@@ -1,6 +1,8 @@
 var mongoose = require('mongoose');
+var ObjectId = mongoose.Types.ObjectId
 var User = require('./../models/user');
 var Message = require('../models/message.js');
+var request = require('request');
 
 /*
  * Sign up a user.
@@ -150,3 +152,58 @@ exports.getAllMessages = function(req, res) {
         });
     });
 }
+
+/*
+ * Get a random quote from the bible
+ */
+exports.getQuote = function(req, res) {
+    var start = Math.floor(Math.random() * 6) + 1; // start page for search
+    var index = Math.floor(Math.random() * 15); // index of array to get from result
+    var url = "http://api.biblia.com/v1/bible/search/LEB.js?query=life&mode=verse&start="+start+"&limit=20&key=fd37d8f28e95d3be8cb4fbc37e15e18e"
+
+    request(url, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            var response = JSON.parse(body);
+
+            res.json({
+                'response': 'OK',
+                'quote': response['results'][index]
+            });
+        }
+    });
+}
+
+/*
+ * post a message to the current message, can be a quote or a custom message
+ */
+exports.sendmessage = function(req, res) {
+    var messageID = req.body.messageID;
+    var message = req.body.message;
+    var title = req.body.messageTitle || '';
+
+    Message.update(
+        {'_id': messageID},
+        { $push: { 
+            replies: {
+                'message': message,
+                'title': title,
+            } 
+        } }, 
+        function(err) {
+        if (err) console.log(err);
+
+        Message.findOne({'_id': messageID}, function(err, message) {
+            res.json({
+                'response': 'OK',
+                'message': message
+            });
+        });
+    });
+}
+
+
+
+
+
+
+
