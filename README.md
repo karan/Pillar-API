@@ -1,7 +1,8 @@
 spaA
 ===
 
-Yo dis gon be da futurz.
+Access at
+http://spa-api.herokuapp.com/
 
 api
 ====
