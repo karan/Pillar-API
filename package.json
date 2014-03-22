@@ -12,5 +12,8 @@
     "mongoose": "~3.8.8",
     "connect-redis": "1.4.7",
     "newrelic": "~1.4.0"
+  },
+  "engines": {
+    "node": "0.10.x"
   }
 }
