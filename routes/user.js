@@ -50,7 +50,7 @@ exports.signup = function(req, res){
  * Sign in a user
  */
 exports.signin = function(req, res) {
-    var username = req.body.username;
+    var username = req.body.username.toLowerCase();
 
     console.log('signing in ' + username);
 

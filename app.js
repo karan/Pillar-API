@@ -7,7 +7,7 @@ var express = require('express'),       // the main ssjs framework
     http = require('http'),
     path = require('path'),             // for path manipulation
     middleware = require('./config/middleware.js'),
-    app = express()                    // create an express app
+    app = express();                    // create an express app
     //RedisStore = require('connect-redis')(express); // for persistent sessions
 
 var app = express();
