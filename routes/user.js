@@ -17,6 +17,7 @@ exports.signup = function(req, res){
 
     user.save(function(err) {
         if (err) {
+            // TODO make it works for the plugin I'm using
             console.log('got into error');
             if (err.code == 11000) {
                 console.log('\n----' + err + '---');
