@@ -28,7 +28,7 @@ var messageSchema = new Schema({
 });
 
 messageSchema.path('message').validate(function(value) {
-    if (value.length < 10 || value.length > 2000)
+    if (value.length > 5000)
         return next(new Error('length'));
 });
 
