@@ -1,10 +1,10 @@
-spaA
+Pillar API
 ===
 
 Access at
 http://spa-api.herokuapp.com/
 
-api
+Running locally
 ====
 
 1. `cd api`
@@ -12,8 +12,6 @@ api
 2. Install node.js dependencies
 
         npm install
-
-For local only:
 
 3. Start mongo
 
@@ -25,9 +23,9 @@ For local only:
 
 ==================
 
-### API End Points
+## API End Points
 
-##### User data returned in each response
+#### User data returned in each response
 
     {
         "response": "OK",

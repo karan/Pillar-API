@@ -7,7 +7,7 @@
 
 var Constants = {
     // The name of the app
-    APP_NAME: "SPA"
+    APP_NAME: "Pillar"
 };
 
 module.exports = Constants;
